@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.control.ToolBar?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<TitledPane fx:id="MainWIndow" animated="false" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="676.0" prefWidth="1452.0" text="eTransport" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo.Scene1Controller">
+  <content>
+    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="650.0" prefWidth="1426.0">
+         <children>
+            <TableView fx:id="tbl1" editable="true" layoutX="59.6" layoutY="263.6" prefHeight="384.0" prefWidth="1262.0" tableMenuButtonVisible="true" AnchorPane.bottomAnchor="12.0" AnchorPane.leftAnchor="50.0" AnchorPane.rightAnchor="65.0" AnchorPane.topAnchor="254.0">
+               <columns>
+                  <TableColumn fx:id="colLinie" prefWidth="75.0" text="Linie" />
+                  <TableColumn fx:id="colCod" prefWidth="101.99999237060547" text="Cod" />
+                  <TableColumn fx:id="colTarifCode" prefWidth="81.99996948242188" text="Cod Vamal" />
+                  <TableColumn fx:id="colDenumire" prefWidth="224.99996948242188" text="Produs" />
+                  <TableColumn fx:id="colCantitate" minWidth="0.0" prefWidth="113.00003051757812" text="Cantitate" />
+                  <TableColumn fx:id="colUM" prefWidth="53.0" text="UM" />
+                  <TableColumn fx:id="colGreutateNeta" prefWidth="139.0" text="GreutateNet" />
+                  <TableColumn fx:id="colGreutateBruta" prefWidth="118.0" text="GreutateGross" />
+                  <TableColumn fx:id="colValoare" prefWidth="155.0" text="Valoare RON" />
+                  <TableColumn fx:id="colGrossNou" prefWidth="169.0" text="GrossCorectat" />
+               </columns></TableView>
+            <ToolBar layoutX="21.6" layoutY="29.6" prefHeight="40.0" prefWidth="1387.0" AnchorPane.leftAnchor="12.0" AnchorPane.rightAnchor="51.0" AnchorPane.topAnchor="20.0">
+              <items>
+                <Button fx:id="btn1" mnemonicParsing="false" onAction="#pressIncarca" text="Incarca" />
+                  <Button fx:id="btn2" disable="true" mnemonicParsing="false" onAction="#pressModifica" text="Incarca CSV" visible="false" />
+                  <Button fx:id="btn3" mnemonicParsing="false" onAction="#pressSalveaza" text="Proceseaza" />
+                  <Label fx:id="lbltn" text="TotalNet" />
+                  <Label fx:id="lbltotalNet" prefHeight="19.0" prefWidth="130.0" style="-fx-background-color: lightGrey;" />
+                  <Label text="TotalGross" />
+                  <Label fx:id="lbltotalGross" prefHeight="19.0" prefWidth="135.0" style="-fx-background-color: lightGrey;" />
+                  <Label fx:id="lbltn1" text="Total Valoare" />
+                  <Label fx:id="lbltotalVal" prefHeight="21.0" prefWidth="165.0" style="-fx-background-color: lightGrey;" />
+                  <Label fx:id="lbltn11" prefHeight="17.0" prefWidth="91.0" text="New Gross Total" />
+                  <Label fx:id="lbltotalNewGross" prefHeight="21.0" prefWidth="166.0" style="-fx-background-color: lightGrey;" />
+                  <Label fx:id="lbltn111" prefHeight="17.0" prefWidth="91.0" text="Fisier Procesat:" />
+              </items>
+            </ToolBar>
+            <TextField fx:id="txtComanda" layoutX="91.0" layoutY="89.0" promptText="Numar Comanda" />
+            <TextField fx:id="txtVAT" layoutX="254.0" layoutY="89.0" promptText="VAT Declarant" />
+            <TextField fx:id="txtOperationCodeTransportType" layoutX="432.0" layoutY="92.0" prefHeight="18.0" prefWidth="106.0" promptText="OperationCodeTransportType" />
+            <TextField fx:id="txtOperationCodeGoodsDeclared" layoutX="995.0" layoutY="89.0" prefHeight="25.0" prefWidth="100.0" promptText="OperationCodeGoodsDeclared" />
+            <TextField fx:id="txtPalletCode" layoutX="1112.0" layoutY="89.0" prefHeight="25.0" prefWidth="81.0" promptText="PalletCode" />
+            <Label layoutX="96.0" layoutY="72.0" prefHeight="17.0" prefWidth="136.0" text="Comanda" />
+            <Label layoutX="258.0" layoutY="72.0" prefHeight="17.0" prefWidth="137.0" text="VAT Declarant" />
+            <Label layoutX="420.0" layoutY="75.0" prefHeight="17.0" prefWidth="139.0" text="OperationCodeTransp" />
+            <Label layoutX="985.0" layoutY="72.0" prefHeight="17.0" prefWidth="120.0" text="OperationCodeGoods" />
+            <Label layoutX="1119.0" layoutY="72.0" prefHeight="17.0" prefWidth="70.0" text="PalletCode">
+               <padding>
+                  <Insets left="3.0" right="3.0" />
+               </padding>
+            </Label>
+            <TextField fx:id="txtPartnerCountryCode" layoutX="557.0" layoutY="90.0" prefHeight="25.0" prefWidth="68.0" promptText="PartnerCountryCode" />
+            <TextField fx:id="txtPartnerCode" layoutX="637.0" layoutY="90.0" prefHeight="25.0" prefWidth="97.0" promptText="PartnerCode" />
+            <TextField fx:id="txtPartnerNam" layoutX="752.0" layoutY="88.0" prefHeight="25.0" prefWidth="228.0" promptText="PartnerNam" />
+            <Label layoutX="557.0" layoutY="75.0" prefHeight="17.0" prefWidth="89.0" text="PartnerCountry" />
+            <Label layoutX="650.0" layoutY="76.0" prefHeight="17.0" prefWidth="93.0" text="PartnerCode" />
+            <Label layoutX="768.0" layoutY="74.0" prefHeight="17.0" prefWidth="217.0" text="PartnerName" />
+            <TextField fx:id="txtTruckPlateNumber" layoutX="169.0" layoutY="148.0" promptText="TruckPlateNumber" />
+            <TextField fx:id="txtTransporterCountryCode" layoutX="342.0" layoutY="149.0" prefHeight="25.0" prefWidth="70.0" promptText="TransporterCountryCode" />
+            <TextField fx:id="txtTransporterCode" layoutX="450.0" layoutY="149.0" prefHeight="25.0" prefWidth="100.0" promptText="TransporterCode" />
+            <TextField fx:id="txtTransporterName" layoutX="577.0" layoutY="149.0" prefHeight="25.0" prefWidth="137.0" promptText="TransporterName" />
+            <TextField fx:id="txtStartDateOfTransport" layoutX="727.0" layoutY="150.0" prefHeight="25.0" prefWidth="127.0" promptText="StartDateOfTransport" />
+            <TextField fx:id="txtCodeForBorderCrossingPoint" layoutX="862.0" layoutY="150.0" prefHeight="25.0" prefWidth="119.0" promptText="CodeForBorderCrossingPoint" />
+            <TextField fx:id="txtCodeForCustomsOffice" layoutX="996.0" layoutY="150.0" prefHeight="25.0" prefWidth="98.0" promptText="CodeForCustomsOffice" />
+            <Label layoutX="182.0" layoutY="135.0" prefHeight="17.0" prefWidth="110.0" text="TruckPlateNumber   " />
+            <Label layoutX="315.0" layoutY="135.0" prefHeight="17.0" prefWidth="155.0" text="    TransporterCountry" />
+            <Label layoutX="447.0" layoutY="136.0" prefHeight="17.0" prefWidth="156.0" text="   TransporterCode" />
+            <Label layoutX="581.0" layoutY="136.0" prefHeight="17.0" prefWidth="120.0" text="TransporterName" />
+            <Label layoutX="715.0" layoutY="136.0" prefHeight="17.0" prefWidth="140.0" text="     StartDateOfTransport">
+               <padding>
+                  <Insets left="3.0" right="3.0" />
+               </padding>
+            </Label>
+            <Label layoutX="867.0" layoutY="136.0" prefHeight="17.0" prefWidth="117.0" text="BorderCrossingCode">
+               <padding>
+                  <Insets left="3.0" right="3.0" />
+               </padding>
+            </Label>
+            <Label layoutX="996.0" layoutY="136.0" prefHeight="17.0" prefWidth="119.0" text="CustomsOfficeCode">
+               <padding>
+                  <Insets left="3.0" right="3.0" />
+               </padding>
+            </Label>
+            <TextField fx:id="txtCountryCodeLoading" layoutX="49.0" layoutY="211.0" prefHeight="25.0" prefWidth="74.0" promptText="CountryCodeLoading" />
+            <TextField fx:id="txtTownNameLoading" layoutX="133.0" layoutY="211.0" promptText="TownNameLoading" />
+            <TextField fx:id="txtStreetNameLoading" layoutX="290.0" layoutY="211.0" prefHeight="25.0" prefWidth="169.0" promptText="StreetNameLoading" />
+            <TextField fx:id="txtCountryCodeUnloading" layoutX="476.0" layoutY="211.0" prefHeight="25.0" prefWidth="67.0" promptText="CountryCodeUnloading" />
+            <TextField fx:id="txtCountyUnloading" layoutX="555.0" layoutY="211.0" prefHeight="25.0" prefWidth="73.0" promptText="CountyUnloading" />
+            <TextField fx:id="txtTownNameUnloading" layoutX="645.0" layoutY="211.0" prefHeight="25.0" prefWidth="166.0" promptText="TownNameUnloading" />
+            <TextField fx:id="txtStreetNameUnloading" layoutX="824.0" layoutY="211.0" prefHeight="25.0" prefWidth="179.0" promptText="StreetNameUnloading" />
+            <Label layoutX="51.0" layoutY="194.0" prefHeight="17.0" prefWidth="78.0" text="CountryLoad" />
+            <Label layoutX="143.0" layoutY="194.0" prefHeight="17.0" prefWidth="136.0" text="TownNameLoading" />
+            <Label layoutX="317.0" layoutY="194.0" prefHeight="17.0" prefWidth="115.0" text="StreetNameLoading" />
+            <Label layoutX="470.0" layoutY="194.0" prefHeight="17.0" prefWidth="80.0" text="CountryDesc" />
+            <Label layoutX="564.0" layoutY="194.0" prefHeight="17.0" prefWidth="75.0" text="JudetDesc" />
+            <Label layoutX="659.0" layoutY="194.0" prefHeight="17.0" prefWidth="139.0" text="OrasDescarcare" />
+            <Label layoutX="836.0" layoutY="194.0" prefHeight="17.0" prefWidth="115.0" text="StradaDescarcare" />
+            <TextField fx:id="txtDocumentTypeCode" layoutX="1017.0" layoutY="211.0" prefHeight="25.0" prefWidth="76.0" promptText="DocumentTypeCode" />
+            <TextField fx:id="txtDocumentNumber" layoutX="1102.0" layoutY="211.0" prefHeight="25.0" prefWidth="112.0" promptText="DocumentNumber" />
+            <TextField fx:id="txtDocumentDate" layoutX="1218.0" layoutY="211.0" prefHeight="25.0" prefWidth="112.0" promptText="DocumentDate" />
+            <Label layoutX="1014.0" layoutY="194.0" prefHeight="17.0" prefWidth="82.0" text="DocumentType" />
+            <Label layoutX="1111.0" layoutY="194.0" prefHeight="17.0" prefWidth="94.0" text="DocumentNo">
+               <padding>
+                  <Insets left="3.0" right="3.0" />
+               </padding>
+            </Label>
+            <Label layoutX="1217.0" layoutY="194.0" prefHeight="17.0" prefWidth="114.0" text="DocumentDate">
+               <padding>
+                  <Insets left="3.0" right="3.0" />
+               </padding>
+            </Label>
+            <MenuBar layoutX="12.0" layoutY="-1.0" prefHeight="19.0" prefWidth="134.0">
+              <menus>
+                <Menu mnemonicParsing="false" text="File">
+                  <items>
+                        <MenuItem fx:id="menuAlegeSursa" mnemonicParsing="false" onAction="#SelectSursa" text="Select director sursa" />
+                    <MenuItem fx:id="menuAlegeDestinatie" mnemonicParsing="false" onAction="#selectDestinatie" text="Select director destinatie" />
+                  </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Edit">
+                  <items>
+                    <MenuItem mnemonicParsing="false" text="Delete" />
+                  </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Help">
+                  <items>
+                    <MenuItem mnemonicParsing="false" text="About" />
+                  </items>
+                </Menu>
+              </menus>
+            </MenuBar>
+            <Label fx:id="fisierProcesat" layoutX="725.0" layoutY="1.0" prefHeight="21.0" prefWidth="300.0" AnchorPane.leftAnchor="715.4000000000001" AnchorPane.topAnchor="1.0">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+            <Label layoutX="597.0" layoutY="11.0" text="Fisier Procesat:">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+         </children></AnchorPane>
+  </content>
+</TitledPane>
